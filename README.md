@@ -2,13 +2,13 @@
 
 Demo repository for the code for the "_Hundreds of Clusters Sitting in a Tree with Argo CD_" talk at [GitOpsCon NA 2022](https://sched.co/1AR8S).
 
-## WARNING!!!
+## WARNING
 
 **WARNING**: Thar **_BE SERIOUS_** dragons here...
 
-If you leave the PR generator running on a public repo, someone could apply apply things onto your cluster that you don't want installed. *DO NOT DO THIS!*
+If you leave the PR generator running on a public repo, someone could apply apply things onto your cluster that you don't want installed. _DO NOT DO THIS!_
 
-## Create the needed namespaces
+## Create the needed namespacesfasbgobasgobasogb
 
 ```sh
 kubectl create ns argocd
@@ -51,7 +51,7 @@ kubectl apply -n argo-events -f https://raw.githubusercontent.com/argoproj/argo-
 
 ## Add the Argo CD Password to the argo namespace
 
-*NOTE*: This really should use an account other than `admin` for security purposes!!
+_NOTE_: This really should use an account other than `admin` for security purposes!!
 
 ```sh
 kubectl create secret generic argocd-login --from-literal=password=THE_ARGOCD_PASSWORD_FROM_ABOVE --from-literal=username=admin -n argo
