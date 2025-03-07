@@ -26,7 +26,7 @@ data:
     kubectl config use-context in-cluster ;
 
     clusterctl get kubeconfig $cluster -n vcluster > $HOME/.kube/my-vcluster.yaml
-    export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/my-vcluster.yaml"
+    export KUBECONFIG="$HOME/.kube/my-vcluster.yaml"
 
     kubectl config set-context $cluster --cluster my-vcluster --user my-vcluster
     argocd cluster add $cluster --label provider=vcluster -y --upsert
