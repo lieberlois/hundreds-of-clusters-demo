@@ -8,10 +8,11 @@ spec:
     host: ""
     port: 0
   helmRelease:
+    version: null
     chart:
-      name: {{.Values.chart_name}}
-      repo: {{.Values.chart_repo}}
-      version: {{.Values.chart_version}}
+      name: vcluster
+      repo: https://charts.loft.sh
+      version: 0.22.1
     values: |
       serviceCIDR: "{{.Values.serviceCIDR}}"
       service:
@@ -29,8 +30,4 @@ spec:
           - "{{ $f }}"
           {{- end }}
         {{- end }}
-      securityContext:
-        runAsUser: 12345
-        runAsNonRoot: true
-      fsGroup: 12345
   kubernetesVersion: "{{.Values.kubernetes_version}}"
